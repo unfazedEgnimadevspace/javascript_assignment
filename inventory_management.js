@@ -41,3 +41,16 @@ const updateStock = (product, unitsSold) => {
         console.log(`${product.name} stock updated. Quantity remaining is: ${product.quantity}`);
     }
 }
+
+// Task 4 
+// Explanation: The `checkLowStock` is a function that goes through all the products in the inventory to check which ones are low in stock. It then outputs each products that are low in stock
+// It makes use of the `for each loop` to go over each product and the console.log method to output each product with a low stock level.
+
+const checkLowStock = () => {
+    inventory.forEach((product) => {
+        if (product.quantity <= product.lowStockLevel) {
+            console.log(`${product.name} is low on stock.`);
+        }
+    })
+} 
+
