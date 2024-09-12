@@ -62,3 +62,16 @@ const calculateInventoryValue = () => {
     const totalValueOfAllProducts = inventory.reduce((total, product) => total + (product.price * product.quantity), 0)
     return totalValueOfAllProducts;
 }
+
+// Task 6 
+// Explanation: The`processSale` function takes a product name and the number of units sold as parameters, then it finds that particular product in the inventory using the find keyword. it then uses the 
+// updateStock function to reduce the product's quantity and log the right message. If the product is not found an error message is printed.
+
+const processSale = (productName, unitsSold) => {
+    const product = inventory.find(item => item.name === productName);
+    if (product) {
+        updateStock(product, unitsSold);
+    } else {
+        console.log(`Error: ${productName} is not in the inventory.`);
+    }
+}
