@@ -54,3 +54,11 @@ const checkLowStock = () => {
     })
 } 
 
+// Task 5 
+// Explanation: The `calculateInventoryValue` function calculates the total value of the of the products in stock by multiplying the price by the quantity for each product.
+// it makes use of the javascript reduce method to sum up the value of all the products in the inventory
+
+const calculateInventoryValue = () => {
+    const totalValueOfAllProducts = inventory.reduce((total, product) => total + (product.price * product.quantity), 0)
+    return totalValueOfAllProducts;
+}
