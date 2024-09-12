@@ -12,3 +12,15 @@ const inventory = [
     { name: 'Sony Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
     { name: 'Lenovo Smartwatch', price: 250, quantity: 4, lowStockLevel: 1 }
 ];
+
+// Task 2 
+// Explanation: The function below `displayProductDetails` is a function that accepts a product as a parameter 
+// then it logs out the name of the product, the price of the product, the quantity of the product in stock 
+// and also a stock status. The stock status is determined by checking if the quantity in stock is higher or lower than the `lowStockLevel`.
+// It uses the console.log method to display the product information and a ternary operator to determine the stock status.
+
+const displayProductDetails = (product) => {
+    const stockStatus = product.quantity > product.lowStockLevel ? "In Stock" : "Low Stock";
+
+    console.log(`Product: ${product.name}, Price: ${product.price}, Quantity: ${product.quantity}, Stock Status: ${stockStatus}\n `)
+}
