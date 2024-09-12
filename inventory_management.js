@@ -24,3 +24,20 @@ const displayProductDetails = (product) => {
 
     console.log(`Product: ${product.name}, Price: ${product.price}, Quantity: ${product.quantity}, Stock Status: ${stockStatus}\n `)
 }
+
+// Task 3
+// Explanation: This function `updateStock` accepts a product object and the number of units sold. The function then subtracts the unitsold from the
+// quantity of the product. After updating the stock, it log a message if the product is "out of stock" or "low stock"
+// it does this by employing a if, else if and else statement
+
+const updateStock = (product, unitsSold) => {
+    product.quantity -= unitsSold;
+    if (product.quantity <= 0) {
+        console.log(`${product.name} out of stock.`);
+        product.quantity = 0;
+    } else if (product.quantity <= product.lowStockLevel) {
+        console.log(`${product.name} is now low on stock.`);
+    } else {
+        console.log(`${product.name} stock updated. Quantity remaining is: ${product.quantity}`);
+    }
+}
